@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="IPA-3D1K: A large Retail 3D Model Dataset for Robot Picking">
+  <meta name="keywords" content="ipa-3d1k, dataset, retail, 3d, robot, picking">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IPA-3D1K: A large Retail 3D Model Dataset for Robot Picking</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!--
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="">
+            Towards automated order picking robots for warehouses and retail.
+          </a>
+          <a class="navbar-item" href="">
+            Real-time instance detection with fast incremental learning
+          </a>
+          <a class="navbar-item" href="">
+            SynthRetailProduct3D (SyRePro3D)
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+-->
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">IPA-3D1K: A large Retail 3D Model Dataset for Robot Picking - IROS 2023</h1>
+          <div class="is-size-5 publication-authors">
+
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=O9bs61EAAAAJ">Jochen Lindermayr</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=fJaqIWUAAAAJ">Cagatay Odabasi</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=ISqbXykAAAAJ">Florian Jordan</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=CggB2DoAAAAJ">Florenz Graf</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=IXWg8cEAAAAJ">Lukas Knak</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=mSpj084AAAAJ">Werner Kraus</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=J-Fe728AAAAJ">Richard Bormann</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=SUU9998AAAAJ">Marco F. Huber</a><sup>2,3</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="affiliation"><sup>1</sup>Department of Robot and Assistive Systems at Fraunhofer IPA</span>
+            <span class="affiliation"><sup>2</sup>Department Cyber Cognitive Intelligence (CCI) at Fraunhofer IPA</span>
+            <span class="affiliation"><sup>3</sup>Institute of Industrial Manufacturing and Management IFF at University of Stuttgart</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <p>We are currently improving our data sharing system. The dataset will be available again shortly through a simpler access process. Thank you for your patience</p>
+              <!-- PDF Link. -->
+               <!--
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              -->
+              <!--
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              -->
+              <!-- Video Link. -->
+              <!--
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              -->
+              <!-- Code Link. -->
+              <!--
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              -->
+              
+              <!-- Dataset Link. -->
+               <!--
+              <span class="link-block">
+                <a href="data.html"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+                </span>
+              -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!--
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4" type="video/mp4">
+      </video>
+      -->
+      <img src="static/images/physics_animation.gif" />
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Robotic applications like automated order picking in warehouses or retail stores, or fetch and carry tasks in hospitals, care homes, or households rely on the capability of service robots to find and handle a specific type of object. These applications are challenging as the set of objects is very large and varies over time. 
+            <br />
+            Despite its significance, there is no suitable universal large-scale dataset available from the retail domain, which allows for a principled analysis of all relevant robotics research aspects in that field. Hence, this paper introduces a <b>novel dataset of 1,000 retail objects</b>, including color images, 3D scans, and <b>high-resolution textured 3D models</b> of individual objects, synthetic scenes and real settings, which <b>covers the specifics of the retail domain</b>. The dataset was designed to serve researchers in all relevant robotics tasks in retail like 3D reconstruction and object modeling, large-scale object classification and instance detection including incremental learning and fine-grained detection, text reading, logo detection, semantic grounding and affordance detection, grasp analysis and manipulation planning, as well as digital twinning and virtual environments.  
+            <br />
+            Based on <b>synthetic RGB images of scenes created from the 3D models</b>, two exemplary use cases are examined in this paper to demonstrate the benefits of the dataset: we evaluate the state-of-the-art <b>incremental object detection method InstanceNet and a few-shot fine-grained object classification method</b>. The results prove the suitability of InstanceNet for incremental object detection on large datasets and are promising for the few-shot object classification system.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="is-centered has-text-centered">
+      <h2 class="title is-3">Renderings from Simulation</h2>
+      <p>&nbsp;</p>
+    </div>
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">HD textured 3D Models</h2>
+          <p>
+            Each 3D model has a
+            3D surface mesh model and a high-resolution texture image
+            mapped on it. Hence, it renders with many details such
+            as readable text area.
+          </p>
+          <video id="zoom-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/detail_zoom_view.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-3">Fine-grained Classification</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              As it is highly common in the retail domain, we captured the problem of low inter-class variances by explicitly
+              adding objects with highly similar designs and shapes.
+            </p>
+            <video id="similar-object-video" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/similar_objects.mp4" type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Structured Shelf Simulation</h2>
+          <p>
+            The rendered scenes contain the retail-specific aspect of 
+            multiple objects of the same types densely packed next to each other in shelves.
+          </p>
+          <video id="video_rendered_shelf_structured" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/2023_03_01_IROS_only_shelf_scene_structured.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+
+      <!-- Matting. -->
+      <div class="column">
+        <h2 class="title is-3">Chaotic Shelf Simulation</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              To enrich the variance of object classes in the same scene, poses, and occlusions, we also rendered chaotic arrangements on
+              the shelves.
+            </p>
+            <video id="video_rendered_shelf_chaotic" autoplay controls muted loop playsinline height="80%">
+              <source src="./static/videos/2023_03_01_IROS_only_shelf_scene_chaotic.mp4" type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--/ Matting. -->
+
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Cite using BibTeX</h2>
+    <pre><code>@inproceedings{lindermayr2023ipa3d1k,
+  title={IPA-3D1K: A large Retail 3D Model Dataset for Robot Picking},
+  author={Lindermayr, Jochen and Odabasi, Cagatay and Jordan, Florian and Graf, Florenz and Knak, Lukas and Kraus, Werner and Bormann, Richard and Huber, Marco F},
+  booktitle={2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages={11404--11411},
+  year={2023},
+  organization={IEEE}
+}</code></pre>
+  </div>
+</section>
+
+
+<section class="section" id="RelatedWork">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Our Related Work</h2>
+    <ul>
+      <li>
+        <a class="navbar-item" href="">Towards automated order picking robots for warehouses and retail</a>
+      </li>
+      <li>
+        <a class="navbar-item" href="">Real-time instance detection with fast incremental learning</a>
+      </li>
+      <li>
+        <a class="navbar-item" href="">SynthRetailProduct3D (SyRePro3D)</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Website source code based on <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. Thanks a lot.
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
