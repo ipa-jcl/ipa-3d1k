@@ -198,11 +198,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Robotic applications like automated order picking in warehouses or retail stores, or fetch and carry tasks in hospitals, care homes, or households rely on the capability of service robots to find and handle a specific type of object. These applications are challenging as the set of objects is very large and varies over time. 
+            The rapid evolution of retail robotics is set to transform in-store operations through advanced automation, spanning vision-based inventory tracking, order picking, packing, and restocking. Yet <b>fine-grained product identification</b> remains a bottleneck: assortments change, packaging evolves, and shelves host thousands of near-duplicate items, requiring perception systems that can adapt quickly with minimal setup.
             <br />
-            Despite its significance, there is no suitable universal large-scale dataset available from the retail domain, which allows for a principled analysis of all relevant robotics research aspects in that field. Hence, this paper introduces a <b>novel dataset of 1,000 retail objects</b>, including color images, 3D scans, and <b>high-resolution textured 3D models</b> of individual objects, synthetic scenes and real settings, which <b>covers the specifics of the retail domain</b>. The dataset was designed to serve researchers in all relevant robotics tasks in retail like 3D reconstruction and object modeling, large-scale object classification and instance detection including incremental learning and fine-grained detection, text reading, logo detection, semantic grounding and affordance detection, grasp analysis and manipulation planning, as well as digital twinning and virtual environments.  
+            This paper addresses this challenge with two key contributions. First, we present a <b>semi-automated, robot-assisted acquisition pipeline</b> that records 3D scene ground truth via iterative object placement and projects it into each captured image, producing <b>dense and scalable annotations</b> at low cost. Second, we extend the <b>IPA-3D1K dataset</b> with challenging real-world shelf scenes containing <b>130 near-duplicate SKUs</b>. While scenes are not paired one-to-one, the same product set appears across synthetic and real images, enabling <b>controlled object-level sim-to-real analyses</b> under occlusion, rearrangement, and lighting variation.
             <br />
-            Based on <b>synthetic RGB images of scenes created from the 3D models</b>, two exemplary use cases are examined in this paper to demonstrate the benefits of the dataset: we evaluate the state-of-the-art <b>incremental object detection method InstanceNet and a few-shot fine-grained object classification method</b>. The results prove the suitability of InstanceNet for incremental object detection on large datasets and are promising for the few-shot object classification system.
+            Using <b>frozen DINOv3 visual features</b>, our baseline recognition pipeline allows the product index to be updated within minutes. We evaluate <b>training-free and fast adaptation approaches</b>, including kNN retrieval and a lightweight classifier head, to analyze the capabilities and limitations of this representation for fine-grained retail identification. Experiments show that on the <b>FineGrainedOCR dataset</b> the lightweight head improves over kNN by approximately <b>11 percentage points</b>, reducing the gap to fully trained models to only <b>1.9–5.3 pp</b>. On <b>IPA-3D1K</b> with 1,000 SKUs, synthetic-scene retrieval achieves strong performance (<b>Top-1 ≈ 90%, Top-2 ≈ 95%</b>), while exact disambiguation among visually similar products remains challenging.
+            <br />
+            Furthermore, we observe that <b>confidence thresholds enable targeted triage during inference</b>, while a <b>neighborhood-based risk signal</b> predicts potential confusions during training, highlighting where specialized recognition modules can provide the greatest benefit.
           </p>
         </div>
       </div>
@@ -213,104 +215,19 @@
 </section>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
 
-    <div class="is-centered has-text-centered">
-      <h2 class="title is-3">Renderings from Simulation</h2>
-      <p>&nbsp;</p>
-    </div>
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">HD textured 3D Models</h2>
-          <p>
-            Each 3D model has a
-            3D surface mesh model and a high-resolution texture image
-            mapped on it. Hence, it renders with many details such
-            as readable text area.
-          </p>
-          <video id="zoom-video" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/detail_zoom_view.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Fine-grained Classification</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As it is highly common in the retail domain, we captured the problem of low inter-class variances by explicitly
-              adding objects with highly similar designs and shapes.
-            </p>
-            <video id="similar-object-video" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/similar_objects.mp4" type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Structured Shelf Simulation</h2>
-          <p>
-            The rendered scenes contain the retail-specific aspect of 
-            multiple objects of the same types densely packed next to each other in shelves.
-          </p>
-          <video id="video_rendered_shelf_structured" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/2023_03_01_IROS_only_shelf_scene_structured.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Chaotic Shelf Simulation</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              To enrich the variance of object classes in the same scene, poses, and occlusions, we also rendered chaotic arrangements on
-              the shelves.
-            </p>
-            <video id="video_rendered_shelf_chaotic" autoplay controls muted loop playsinline height="80%">
-              <source src="./static/videos/2023_03_01_IROS_only_shelf_scene_chaotic.mp4" type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-
-  </div>
-</section>
 
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">Cite using BibTeX</h2>
-    <pre><code>@inproceedings{lindermayr2023ipa3d1k,
-  title={IPA-3D1K: A large Retail 3D Model Dataset for Robot Picking},
-  author={Lindermayr, Jochen and Odabasi, Cagatay and Jordan, Florian and Graf, Florenz and Knak, Lukas and Kraus, Werner and Bormann, Richard and Huber, Marco F},
-  booktitle={2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  pages={11404--11411},
-  year={2023},
-  organization={IEEE}
+    <pre><code>@inproceedings{lindermayr2026real,
+  title     = {Efficient Real-World Benchmarking for Practical Fine-Grained Product Identification in Retail Robotics for Picking and Stock Taking},
+  author    = {Lindermayr, Jochen and Jordan, Florian and Odabasi, Cagatay and Kraus, Werner and Bormann, Richard and Huber, Marco F.},
+  booktitle = {Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
+  year      = {2026},
+  organization = {IEEE}
+}
 }</code></pre>
   </div>
 </section>
